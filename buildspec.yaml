@@ -1,6 +1,0 @@
-build:
-   commands:
-     - npm build
- post_build:
-   commands:
-- aws s3 sync --delete . "s3://<your-static-website-bucket>"
