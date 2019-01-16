@@ -24,12 +24,17 @@ class App extends Component {
     } else {
       this.setState({loading: true})
       this.requestImage(text).then((data) => {
+        try {
         console.log('Received URL: ' + data.image)
         this.setState({
           queried: true,
           loading: false,
           imageURL: data.image
         })
+      } catch (e) {
+        console.log("Failed to get response from API: + " + data)
+
+      }
       })
     }
   }
@@ -47,11 +52,12 @@ class App extends Component {
     console.log(_config)
     console.log('Requesting Image with text: ' + text)
     try {
-      response = await fetch('https://tbrz9z67od.execute-api.us-west-2.amazonaws.com/prod' + "/encrypttext", {
+      response = await fetch('https://6yavxw14zi.execute-api.us-west-2.amazonaws.com/prod/' + 'requestplate', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
         },
         body: JSON.stringify({
           text: text,
@@ -92,25 +98,6 @@ class App extends Component {
   }
   
   componentDidMount() {
-    fetch("https://api.example.com/items")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result.items
-          });
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
   }
 }
 
