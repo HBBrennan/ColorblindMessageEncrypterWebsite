@@ -56,11 +56,10 @@ class App extends Component {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          text: text,
+          text: text
         })
       })
     } catch (e) {
