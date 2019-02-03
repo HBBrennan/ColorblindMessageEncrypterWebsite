@@ -52,7 +52,7 @@ class App extends Component {
     console.log(_config)
     console.log('Requesting Image with text: ' + text)
     try {
-      response = await fetch('https://6yavxw14zi.execute-api.us-west-2.amazonaws.com/prod/' + 'requestplate', {
+      response = await fetch('https://vts7a6o8y5.execute-api.us-west-2.amazonaws.com/prod' + '/requestplate', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
