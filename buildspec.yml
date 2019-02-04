@@ -8,6 +8,7 @@ phases:
      - sudo apt-get install -y build-essential
      - npm install
      - npm install react-scripts@latest
+     - npm install terser@3.14.1 --save-dev
  pre_build:
    commands:
      - ls -l
