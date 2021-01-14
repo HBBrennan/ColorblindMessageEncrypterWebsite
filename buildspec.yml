@@ -9,7 +9,7 @@ phases:
  build:
    commands:
      - npm run build
- artifacts:
+artifacts:
   files:
     - build/*
 
